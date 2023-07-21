@@ -10,7 +10,7 @@ router.post("/upload", (req, res) => {
     }, 3000);
 });
 
-router.delete("/delete", (req, res) => {
+router.delete("/upload", (req, res) => {
     console.log(`File deleted`)
     return res.status(200).json({ result: true, msg: 'file deleted' });
 });
