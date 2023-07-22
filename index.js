@@ -3,8 +3,6 @@ import dotenv from "dotenv";
 import cors from 'cors';
 import { usersRouter } from "./Routers/users.js";
 
-
-
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
@@ -27,9 +25,6 @@ app.delete("/upload", (req, res) => {
 });
 
 app.use("/users",usersRouter)
-
-
-
 app.listen(PORT, ()=>console.log(`Server started in localhost:${PORT}`));
 
 
