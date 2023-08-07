@@ -12,15 +12,15 @@ app.use(cors());
 
 app.post("/upload", (req, res) => {
 setTimeout(() => {
-    let date=new Date();
-    let todaydate=("0"+date.getDate()).slice(-2);
-    let month=("0"+(date.getMonth()+1)).slice(-2);
-    let year=date.getFullYear();
-    let hours=date.getHours();
-    let Minutes=date.getMinutes();
-    let seconds=date.getSeconds();
-    var content=year+"-"+month+"-"+todaydate+" "+hours+":"+Minutes+":"+seconds;
-    return res.status(200).json({ result: true, msg: 'file uploaded', date:content});
+    let dt=new Date();
+    let date=("0"+dt.getDate()).slice(-2);
+    let month=("0"+(dt.getMonth()+1)).slice(-2);
+    let year=dt.getFullYear();
+    let hours=dt.getHours();
+    let Minutes=dt.getMinutes();
+    let seconds=dt.getSeconds();
+    var output=year+"-"+month+"-"+date+" "+hours+":"+Minutes+":"+seconds;
+    return res.status(200).json({ result: true, msg: 'file uploaded', dt:output});
     }, 3000);
 });
 
